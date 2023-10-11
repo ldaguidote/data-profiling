@@ -19,7 +19,7 @@ with st.sidebar:
 
 if choice == 'Upload Data':
     st.title('File Upload')
-    st.subheader('Choose a file for analysis')
+    st.subheader('Choose a CSV file for analysis')
     file = st.file_uploader('Choose a file')
 
     if file:
