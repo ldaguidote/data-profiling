@@ -11,7 +11,7 @@ if os.path.exists('./dataset.csv') :
     df = pd.read_csv('dataset.csv', index_col=None)
 
 with st.sidebar:
-    st.image('assets/swiftsight.png')
+    st.image('assets/datapro.png')
     st.caption('This portal aims to facilitate the work of functional analysts through '
                'automated data quality profiling and exploratory data analysis')
 
