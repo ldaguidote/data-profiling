@@ -19,13 +19,18 @@ with st.sidebar:
 
 if choice == 'Upload Data':
     st.title('File Upload')
-    st.subheader('Choose a CSV file for analysis')
+    st.subheader('Choose a file for analysis')
+    filetype = st.radio('File Type', ['CSV', 'XLSX'])
     file = st.file_uploader('Choose a file')
 
     if file:
+        if filetype == 'CSV':
+            df = pd.read_csv(file, index_col=None)
 
-        df = pd.read_csv(file, index_col=None)
-        df = transform_dates(df)
+        elif filetype == 'XLSX':
+            df = pd.read_excel(file, index_col=None)
+
+        # df = transform_dates(df)
         df.to_csv('dataset.csv', index=None)
         st.dataframe(df)
 
